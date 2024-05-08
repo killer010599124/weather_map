@@ -552,23 +552,39 @@ const Map = () => {
         <div className='data_text'>Pressure : {pressure}</div>
         <div className='data_text'>Moon Phase : {moonphase}</div>
 
-        <div style={{ width: '100%', textAlign: 'center',}}></div>
-        <button style={{ textAlign: 'center', color: 'aqua', fontSize: '15px', position: 'absolute', marginTop: '535px', 
-          border: '1px solid white', borderRadius: 20, padding: '0 20px', marginLeft : '-6px' }} onClick={() => {
-          temperatureUnitRef.current = temperatureUnit === 'C' ? 'F' : 'C'
-          setTemperatureUnit(temperatureUnit === 'C' ? 'F' : 'C')
-        }}>
-          {/* Click Here To Change <br />   Temperature Unit ({temperatureUnit}) */}
-          Click To Change Units
-        </button>
-        <button style={{ textAlign: 'center', color: 'aqua', fontSize: '15px', position: 'absolute', marginTop: '560px', width: '100%', marginLeft : '-6px'  }} onClick={() => setForeEnable(!foreEnable)}>
-          {/* Click Here To Change <br />   Temperature Unit ({temperatureUnit}) */}
-          Click To {foreEnable ? "Hide" : "Show"} Forecast Weather
-        </button>
-        <button style={{ textAlign: 'center', color: 'aqua', fontSize: '15px', position: 'absolute', marginTop: '508px', width: '100%' , marginLeft : '-6px' }} onClick={() => setDefaultCityShowEnable(!defaultCityShowEnable)}>
-          {/* Click Here To Change <br />   Temperature Unit ({temperatureUnit}) */}
-          Click To {defaultCityShowEnable ? "Hide" : "Show"} Default City
-        </button>
+        <div style={{ textAlign: 'center', color: 'aqua', fontSize: '15px', position: 'absolute', marginTop: '490px', width: '100%', marginLeft: '-6px' }}>
+          <button style={{
+            width: '90%',
+            textAlign : 'center',
+            border: '1px solid white', borderRadius: 20, padding: '0 20px', marginLeft: '-6px'
+          }} onClick={() => {
+            temperatureUnitRef.current = temperatureUnit === 'C' ? 'F' : 'C'
+            setTemperatureUnit(temperatureUnit === 'C' ? 'F' : 'C')
+          }}>
+            {/* Click Here To Change <br />   Temperature Unit ({temperatureUnit}) */}
+            Click To Change Units
+          </button>
+          <button style={{
+            marginTop: '10px',
+            textAlign : 'center',
+            width: '90%',
+            border: '1px solid white', borderRadius: 20, padding: '0 20px', marginLeft: '-6px'
+          }} onClick={() => setForeEnable(!foreEnable)}>
+            {/* Click Here To Change <br />   Temperature Unit ({temperatureUnit}) */}
+            Click To {foreEnable ? "Hide" : "Show"} Forecast
+          </button>
+          <button style={{
+            width: '90%',
+            marginTop: '10px',
+            textAlign : 'center',
+            border: '1px solid white', borderRadius: 20, padding: '0 20px', marginLeft: '-6px'
+          }} onClick={() => setDefaultCityShowEnable(!defaultCityShowEnable)}>
+            {/* Click Here To Change <br />   Temperature Unit ({temperatureUnit}) */}
+            Click To {defaultCityShowEnable ? "Hide" : "Show"} Top City
+          </button>
+        </div>
+
+
       </div>
       <div style={{
         position: 'absolute',
@@ -650,7 +666,7 @@ const Map = () => {
             style={{ color: 'springgreen' }}
             className="link"
           >
-             Show Average Weather Details For This Location
+            Show Average Weather Details For This Location
           </a>
         </div>
 
