@@ -289,8 +289,11 @@ const Map = () => {
 
   window.addEventListener('beforeunload', () => {
     // Save the current location to a cookie
-    if (locations.length != 0)
+    if (locations.length != 0) {
+
+      Cookies.remove('savedLocations')
       Cookies.set('savedLocations', JSON.stringify(locations));
+    }
   });
 
   //------------------ Load Locations from Cookie ------------------\\
@@ -555,7 +558,7 @@ const Map = () => {
         <div style={{ textAlign: 'center', color: 'aqua', fontSize: '15px', position: 'absolute', marginTop: '490px', width: '100%', marginLeft: '-6px' }}>
           <button style={{
             width: '90%',
-            textAlign : 'center',
+            textAlign: 'center',
             border: '1px solid white', borderRadius: 20, padding: '0 20px', marginLeft: '-6px'
           }} onClick={() => {
             temperatureUnitRef.current = temperatureUnit === 'C' ? 'F' : 'C'
@@ -566,7 +569,7 @@ const Map = () => {
           </button>
           <button style={{
             marginTop: '10px',
-            textAlign : 'center',
+            textAlign: 'center',
             width: '90%',
             border: '1px solid white', borderRadius: 20, padding: '0 20px', marginLeft: '-6px'
           }} onClick={() => setForeEnable(!foreEnable)}>
@@ -576,7 +579,7 @@ const Map = () => {
           <button style={{
             width: '90%',
             marginTop: '10px',
-            textAlign : 'center',
+            textAlign: 'center',
             border: '1px solid white', borderRadius: 20, padding: '0 20px', marginLeft: '-6px'
           }} onClick={() => setDefaultCityShowEnable(!defaultCityShowEnable)}>
             {/* Click Here To Change <br />   Temperature Unit ({temperatureUnit}) */}
